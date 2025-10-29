@@ -1,0 +1,236 @@
+/* ====== Grundlayout (gemensam för båda vyer) ====== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 12px;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background-color: #fff4d0;
+
+    color: #3b2f22;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    text-align: center;
+    padding: 8px 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 4px 0;
+}
+
+.sub {
+    color: #6f5d48;
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 18px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.group {
+    margin-top: 10px;
+}
+
+.label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.select,
+.input,
+.inline-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.radios {
+    display: grid;
+    gap: 8px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e6e0d6;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 48px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.radio:hover {
+    background: #fffdf2;
+}
+
+.radio input {
+    width: 20px;
+    height: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.inline-input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.inline-input input {
+    width: 120px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+    background: #f8d25c;
+    font-weight: 800;
+    font-size: 18px;
+    color: #3b2f22;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #e0b94d;
+}
+
+.btn:hover {
+    background: #f2c94c;
+}
+
+.btn.secondary {
+    background: #eee;
+    box-shadow: 0 6px 0 #ccc;
+}
+
+.btn.secondary:hover {
+    background: #e5e5e5;
+}
+
+.result {
+    margin-top: 14px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.hint {
+    color: #6f5d48;
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.timer-view {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+    z-index: 50;
+    padding: 16px;
+    background: linear-gradient(180deg, #fff9e5, #fff4d0);
+    overflow: hidden;
+}
+
+.bubbles {
+    display: none;
+}
+
+.timer-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    align-items: center;
+}
+
+.timer-head strong {
+    display: none;
+}
+
+.timer-head .btn {
+    width: 100%;
+    margin-top: 0;
+}
+
+.timer-hero {
+    text-align: center;
+    padding-top: 8px;
+}
+
+.egg-timer {
+    width: 320px;
+    height: 400px;
+    margin: 24px auto 0 auto;
+    background: radial-gradient(180px 230px at 50% 32%, #fff, #ffeeb6 70%, #ffd86a 100%);
+    border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), inset 0 6px 16px rgba(0, 0, 0, 0.08);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.egg-gloss {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: 140px;
+    height: 56px;
+    margin-left: -70px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.7;
+    border: 1px solid #f3e9bf;
+}
+
+.egg-time {
+    font-size: 64px;
+    font-weight: 900;
+    color: #2d2618;
+    margin: 0;
+}
+
+.egg-caption {
+    font-weight: 700;
+    color: #6f5d48;
+    margin: 6px 0 0 0;
+}
+
+footer {
+    text-align: center;
+    color: #6f5d48;
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+
+@media (min-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}

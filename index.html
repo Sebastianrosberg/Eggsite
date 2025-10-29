@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eggorithm</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header>
+        <h1>🥚 Eggkvation</h1>
+        <p class="sub">Koka ägg med vetenskaplig precision</p>
+    </header>
+
+    <main class="card" id="mainView">
+        <div class="group">
+            <div class="label">Äggstorlek</div>
+            <select id="size" class="select">
+                <option value="53">EU S (~53 g)</option>
+                <option value="63" selected>EU M (~63 g)</option>
+                <option value="73">EU L (~73 g)</option>
+                <option value="83">EU XL (~83 g)</option>
+            </select>
+        </div>
+
+        <div class="group">
+            <div class="label">Äggets temperatur</div>
+            <div class="radios" id="origin">
+                <label class="radio">
+                    <input type="radio" name="origin" value="fridge" checked>
+                    Kylskåp (≈5 °C)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="origin" value="room">
+                    Rumstemperatur (≈20 °C)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="origin" value="custom">
+                    Ange själv
+                </label>
+            </div>
+
+            <div class="inline-input hidden" id="eggCustomWrap">
+                <span>°C</span>
+                <input id="eggCustom" type="text" inputmode="decimal" placeholder="t.ex. 8" />
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="label">Hur kokt vill du ha det?</div>
+            <div class="radios" id="done">
+                <label class="radio"><input type="radio" name="done" value="63"> Löskokt (63 °C)</label>
+                <label class="radio"><input type="radio" name="done" value="67" checked> Medium (67 °C)</label>
+                <label class="radio"><input type="radio" name="done" value="70"> Hårdkokt (70 °C)</label>
+                <label class="radio">
+                    <input type="radio" name="done" value="custom">
+                    Ange måltemperatur
+                </label>
+            </div>
+
+            <div class="inline-input hidden" id="targetCustomWrap">
+                <span>°C</span>
+                <input id="targetCustom" type="text" inputmode="decimal" placeholder="t.ex. 68" />
+            </div>
+        </div>
+
+        <button class="btn" id="calcBtn">Beräkna koktid</button>
+        <button class="btn" id="startTimerBtn" style="display:none;">Starta timer</button>
+
+        <div class="result" id="result">—</div>
+        <div class="hint" id="details"></div>
+    </main>
+
+    <section id="timerView" class="timer-view" aria-hidden="true">
+
+        <div class="timer-head">
+            <button id="backBtn" class="btn secondary">⬅︎ Tillbaka</button>
+            <button id="stopBtn" class="btn secondary">Stoppa</button>
+        </div>
+
+        <div class="timer-hero">
+            <div class="egg-timer">
+                <div class="egg-time" id="bigTimer">00:00</div>
+                <div class="egg-caption" id="bigLabel">Tid kvar</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2025 Eggorithm</footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
